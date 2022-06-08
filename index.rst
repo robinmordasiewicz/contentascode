@@ -21,7 +21,7 @@ Content As Code
 
 .. container:: hero-header-block
 
-   Continuous improvement and deployment of content
+   Continuous improvement and deployment of content.
 
 .. container:: video-sidebar
 
