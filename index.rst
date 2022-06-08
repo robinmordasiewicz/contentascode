@@ -5,8 +5,9 @@ Content As Code
   diagram/index.rst
   html/index.rst
   mp4/index.rst
-  pptx/index.rst
-  screencapture/index.rst
+  slides/index.rst
+  screenshot/index.rst
+  screenrecording/index.rst
   terminal/index.rst
 
 .. toctree::
