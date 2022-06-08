@@ -1,6 +1,6 @@
-=================
+==================
 Content As Code
-=================
+==================
 
   diagram/index.rst
   html/index.rst
