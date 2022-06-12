@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 const { createCursor } = require("ghost-cursor");
 
 const { PuppeteerScreenRecorder } = require("puppeteer-screen-recorder");
-const {installMouseHelper} = require('./install-mouse-helper');
+const {installMouseHelper} = require('install-mouse-helper');
 
 var TOKEN=(process.argv.slice(2))[0];
 if ( !TOKEN ) {
