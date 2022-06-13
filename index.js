@@ -257,6 +257,7 @@ const Config = {
           clip: { x: 0, y: 0, width: 1920, height: 1080 }
         });
     }
+/*
     {
         // Click Manage Jenkins
         const targetPage = page;
@@ -322,11 +323,21 @@ const Config = {
         await cursor.click(element);
         //await Promise.all(promises);
     }
-
+*/
     //save cookies
 //    const cookies = await page.cookies();
 //    await fs.writeFile('./cookies.json', JSON.stringify(cookies, null, 2));
-    await page.waitForTimeout(5000);
+    // await page.waitForTimeout(5000);
+    {
+        // Jenkins login screenshot
+        const targetPage = page;
+        await page.waitForTimeout(2000);
+        await targetPage.screenshot({
+          path: 'screenshot2.png',
+          type: 'png',
+          clip: { x: 0, y: 0, width: 1920, height: 1080 }
+        });
+    }
 
     await recorder.stop();
     await browser.close();
