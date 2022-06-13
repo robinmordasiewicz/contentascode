@@ -310,7 +310,7 @@ const Config = {
         await scrollIntoViewIfNeeded(element, timeout);
         await cursor.click(element);
         //await page.waitForTimeout(3000);
-        await targetPage.waitForTimeout(5000);
+        await targetPage.waitForTimeout(7000);
     }
     {
         // Navigate back to the Dashboard
