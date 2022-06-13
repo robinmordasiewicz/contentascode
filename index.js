@@ -267,6 +267,7 @@ const Config = {
         await cursor.click(element);
         await Promise.all(promises);
     }
+/*
     {
         // Click Configuration as Code
         const targetPage = page;
@@ -277,7 +278,6 @@ const Config = {
         await cursor.click(element);
         await Promise.all(promises);
     }
-/*
     {
         // Click on the URL form field
         const targetPage = page;
