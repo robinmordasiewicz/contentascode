@@ -262,23 +262,23 @@ const Config = {
         const targetPage = page;
         const promises = [];
         promises.push(targetPage.waitForNavigation());
-        const element = await waitForSelectors([["#tasks > div:nth-child(6) > span > a > span.task-link-text"]], targetPage, { timeout, visible: true });
+        const element = await waitForSelectors([["#tasks > div:nth-child(4) > span > a > span.task-link-text"]], targetPage, { timeout, visible: true });
         await scrollIntoViewIfNeeded(element, timeout);
         await cursor.click(element);
         await Promise.all(promises);
     }
-/*
     {
         // Click Configuration as Code
         const targetPage = page;
         const promises = [];
         promises.push(targetPage.waitForNavigation());
-       // const element = await waitForSelectors([["#main-panel > section:nth-child(4) > div > div:nth-child(5) > a > dl > dd:nth-child(2)"]], targetPage, { timeout, visible: true });
-        const element = await waitForSelectors([["#main-panel > section:nth-child(4) > div > div:nth-child(5) > a"]], targetPage, { timeout, visible: true });
+        const element = await waitForSelectors([["#main-panel > section:nth-child(4) > div > div:nth-child(5) > a > dl > dd:nth-child(2)"]], targetPage, { timeout, visible: true });
+       // const element = await waitForSelectors([["#main-panel > section:nth-child(4) > div > div:nth-child(5) > a"]], targetPage, { timeout, visible: true });
         await scrollIntoViewIfNeeded(element, timeout);
         await cursor.click(element);
         await Promise.all(promises);
     }
+/*
     {
         // Click on the URL form field
         const targetPage = page;
