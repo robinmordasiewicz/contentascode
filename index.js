@@ -22,7 +22,7 @@ const Config = {
 
 (async () => {
     const browser = await puppeteer.launch({
-      args: ["--no-sandbox", "--disabled-setupid-sandbox","--enable-font-antialiasing","--force-device-scale-factor=1", "--high-dpi-support=1", "--font-render-hinting=none","--disable-gpu","--force-color-profile=srgb"],
+      args: ["--no-sandbox", "--disabled-setupid-sandbox","--enable-font-antialiasing", "--high-dpi-support=1", "--font-render-hinting=none","--disable-gpu","--force-color-profile=srgb"],
       slowMo: 0,
       headless : true
     });
