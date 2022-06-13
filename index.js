@@ -309,12 +309,12 @@ const Config = {
         const element = await waitForSelectors([["aria/Apply new configuration"],["#yui-gen1-button"]], targetPage, { timeout, visible: true });
         await scrollIntoViewIfNeeded(element, timeout);
         await cursor.click(element);
-        await page.waitForTimeout(3000);
+        //await page.waitForTimeout(3000);
+        await targetPage.waitForTimeout(5000);
     }
     {
         // Navigate back to the Dashboard
         const targetPage = page;
-        await targetPage.waitForTimeout(2000);
         const promises = [];
         promises.push(targetPage.waitForNavigation());
         const element = await waitForSelectors([["aria/Dashboard"],["#breadcrumbs > li:nth-child(1) > a"]], targetPage, { timeout, visible: true });
@@ -326,7 +326,7 @@ const Config = {
     //save cookies
 //    const cookies = await page.cookies();
 //    await fs.writeFile('./cookies.json', JSON.stringify(cookies, null, 2));
-    await page.waitForTimeout(5000);
+    await page.waitForTimeout(2000);
 
     await recorder.stop();
     await browser.close();
