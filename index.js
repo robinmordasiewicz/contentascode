@@ -257,7 +257,6 @@ const Config = {
           clip: { x: 0, y: 0, width: 1920, height: 1080 }
         });
     }
-/*
     {
         // Click Manage Jenkins
         const targetPage = page;
@@ -278,6 +277,7 @@ const Config = {
         await cursor.click(element);
         await Promise.all(promises);
     }
+/*
     {
         // Click on the URL form field
         const targetPage = page;
