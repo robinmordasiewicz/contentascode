@@ -42,21 +42,11 @@ if ( !PASSWORD ) {
     throw "Please provide a password as the second argument";
 }
 
-const Config = {
-  followNewTab: true,
-  fps: 30,
-  ffmpeg_Path: 'ffmpeg' || null,
-  videoFrame: {
-    width: 1920,
-    height: 1080
-  },
-  aspectRatio: '16:9'
-};
-
 (async () => {
     console.log("Start the Browser");
     const browser = await puppeteer.launch({
-       args: ["--disable-dev-shm-usage","--user-data-dir=./.chrome","--start-fullscreen","--kiosk","--disable-session-crashed-bubble","--noerrdialogs","--no-default-browser-check","--useAutomationExtension","--disable-infobars","--ignore-certificate-errors","--start-maximized","--enable-automation","--no-sandbox", "--disabled-setupid-sandbox", "--enable-font-antialiasing","--font-render-hinting=none","--disable-gpu","--force-color-profile=srgb","--window-size=1920,1080"],
+       //args: ["--disable-dev-shm-usage","--user-data-dir=./.chrome","--start-fullscreen","--kiosk","--disable-session-crashed-bubble","--noerrdialogs","--no-default-browser-check","--useAutomationExtension","--disable-infobars","--ignore-certificate-errors","--start-maximized","--enable-automation","--no-sandbox", "--disabled-setupid-sandbox", "--enable-font-antialiasing","--font-render-hinting=none","--disable-gpu","--force-color-profile=srgb","--window-size=1920,1080"],
+       args: ["--disable-dev-shm-usage","--user-data-dir=./.chrome","--start-fullscreen","--kiosk","--disable-session-crashed-bubble","--noerrdialogs","--no-default-browser-check","--useAutomationExtension","--disable-infobars","--ignore-certificate-errors","--start-maximized","--enable-automation","--no-sandbox", "--disabled-setupid-sandbox", "--enable-font-antialiasing","--font-render-hinting=none","--disable-gpu","--force-color-profile=srgb"],
       //executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
       //executablePath: '/opt/google/chrome-unstable/google-chrome-unstable',
       slowMo: 0,
@@ -71,12 +61,12 @@ const Config = {
     //const page = await context.newPage();
     const page = await browser.newPage();
     console.log("Set the user agent");
-//    await page.setUserAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36");
+    await page.setUserAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36");
     const cursor = createCursor(page);
     console.log("Install mouse helper");
     await installMouseHelper(page);
-    console.log("Set page Viewport");
-    await page.setViewport({ width: 1920, height: 1080 });
+//    console.log("Set page Viewport");
+//    await page.setViewport({ width: 1920, height: 1080 });
     console.log("define a timeout variable for 70 seconds");
     const timeout = 70000;
     console.log("set default timeout on page");
@@ -84,16 +74,13 @@ const Config = {
     console.log("Pause for 10 seconds");
     await page.waitForTimeout(10000);
 
-    //const recorder = new PuppeteerScreenRecorder(page, Config);
-    //await recorder.start("screenrecording.mp4");
-   //  import { area, circumference } from './puppeteer-functions.mjs';
     const { waitForSelectors, scrollIntoViewIfNeeded, waitForConnected, waitForInViewport, waitForSelector, waitForElement, querySelectorsAll, querySelectorAll, waitForFunction } = require("./puppeteer-functions.mjs");
 
-    {
-        console.log("Set Viewport to 1080p");
-        const targetPage = page;
-        await targetPage.setViewport({"width":1920,"height":1080})
-    }
+//    {
+//        console.log("Set Viewport to 1080p");
+//        const targetPage = page;
+//        await targetPage.setViewport({"width":1920,"height":1080})
+//    }
     {
         console.log("Goto login URL");
         const targetPage = page;
