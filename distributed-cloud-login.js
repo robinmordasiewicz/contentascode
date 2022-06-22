@@ -86,7 +86,8 @@ const Config = {
 
     //const recorder = new PuppeteerScreenRecorder(page, Config);
     //await recorder.start("screenrecording.mp4");
-    import { area, circumference } from './puppeteer-functions.mjs';
+   //  import { area, circumference } from './puppeteer-functions.mjs';
+    const { waitForSelectors, scrollIntoViewIfNeeded, waitForConnected, waitForInViewport, waitForSelector, waitForElement, querySelectorsAll, querySelectorAll, waitForFunction } = require("./puppeteer-functions.mjs");
 
     {
         console.log("Set Viewport to 1080p");
