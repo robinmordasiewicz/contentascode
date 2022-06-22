@@ -46,7 +46,7 @@ if ( !PASSWORD ) {
     console.log("Start the Browser");
     const browser = await puppeteer.launch({
        //args: ["--disable-dev-shm-usage","--user-data-dir=./.chrome","--start-fullscreen","--kiosk","--disable-session-crashed-bubble","--noerrdialogs","--no-default-browser-check","--useAutomationExtension","--disable-infobars","--ignore-certificate-errors","--start-maximized","--enable-automation","--no-sandbox", "--disabled-setupid-sandbox", "--enable-font-antialiasing","--font-render-hinting=none","--disable-gpu","--force-color-profile=srgb","--window-size=1920,1080"],
-       args: ["--disable-dev-shm-usage","--user-data-dir=./.chrome","--start-fullscreen","--kiosk","--disable-session-crashed-bubble","--noerrdialogs","--no-default-browser-check","--useAutomationExtension","--disable-infobars","--ignore-certificate-errors","--start-maximized","--enable-automation","--no-sandbox", "--disabled-setupid-sandbox", "--enable-font-antialiasing","--font-render-hinting=none","--disable-gpu","--force-color-profile=srgb","--window-size=1280,720"],
+       args: ["--disable-dev-shm-usage","--user-data-dir=./.chrome","--start-fullscreen","--kiosk","--disable-session-crashed-bubble","--noerrdialogs","--no-default-browser-check","--useAutomationExtension","--disable-infobars","--ignore-certificate-errors","--start-maximized","--enable-automation","--no-sandbox", "--disabled-setupid-sandbox", "--enable-font-antialiasing","--font-render-hinting=none","--disable-gpu","--force-color-profile=srgb","--window-size=1920,1080"],
       //executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
       //executablePath: '/opt/google/chrome-unstable/google-chrome-unstable',
       slowMo: 0,
@@ -66,7 +66,7 @@ if ( !PASSWORD ) {
     console.log("Install mouse helper");
     await installMouseHelper(page);
     console.log("Set page Viewport");
-    await page.setViewport({ width: 1280, height: 720 });
+    await page.setViewport({ width: 1920, height: 1080 });
     console.log("define a timeout variable for 70 seconds");
     const timeout = 70000;
     console.log("set default timeout on page");
@@ -79,7 +79,7 @@ if ( !PASSWORD ) {
     {
         console.log("Set Viewport to 1080p");
         const targetPage = page;
-        await targetPage.setViewport({"width":1280,"height":720})
+        await targetPage.setViewport({"width":1920,"height":1080})
     }
     {
         console.log("Goto login URL");
