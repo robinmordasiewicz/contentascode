@@ -73,7 +73,7 @@ if ( !PASSWORD ) {
     console.log("Pause for 10 seconds");
     await page.waitForTimeout(10000);
 
-    const { waitForSelectors, scrollIntoViewIfNeeded, waitForConnected, waitForInViewport, waitForSelector, waitForElement, querySelectorsAll, querySelectorAll, waitForFunction } = require("./puppeteer-functions.mjs");
+    const { autoScroll,waitForSelectors, scrollIntoViewIfNeeded, waitForConnected, waitForInViewport, waitForSelector, waitForElement, querySelectorsAll, querySelectorAll, waitForFunction } = require("./puppeteer-functions.mjs");
 
     {
         console.log("Set Viewport to 936p");
@@ -172,6 +172,9 @@ if ( !PASSWORD ) {
           delay: 250
         });
     }
+
+
+ await autoScroll(page);
 
    // window.scrollBy(0, document.body.scrollHeight);
 
