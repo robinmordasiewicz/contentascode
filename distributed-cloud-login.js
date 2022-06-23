@@ -163,6 +163,7 @@ if ( !PASSWORD ) {
         await cursor.click(element);
         console.log("Pausing for 8 seconds");
         await page.waitForTimeout(8000);
+/*
         const bottomPosition = await scrollPageToBottom(targetPage, {
           size: 500,
           delay: 250
@@ -172,8 +173,18 @@ if ( !PASSWORD ) {
           delay: 250
         });
         await autoScroll(targetPage);
+*/
     }
-
+    {
+        console.log("Scroll");
+        const targetPage = page;
+        const element = await waitForSelectors('body > vs-stellar-root > vs-stellar-home-container > vs-stellar-home > div > div > vs-stellar-footer > div', targetPage, { timeout: 120000, visible: true });
+        await scrollIntoViewIfNeeded(element, timeout);
+        await cursor.click(element);
+        console.log("Pausing for 8 seconds");
+        await page.waitForTimeout(8000);
+    }
+/*
    const selector = 'body > vs-stellar-root > vs-stellar-home-container > vs-stellar-home > div > div > vs-stellar-footer > div';
 
     // scroll selector into view
@@ -194,7 +205,7 @@ if ( !PASSWORD ) {
 await page.evaluate( () => {
                 window.scrollBy(0, window.innerHeight);
             });
-
+*/
     console.log("Pausing for 12 seconds");
     await page.waitForTimeout(12000);
     console.log("Closing the browser");
