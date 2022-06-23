@@ -197,6 +197,10 @@ const autoScroll = async (page) => {
 }
     await page.evaluate(() => { window.scrollBy(0,document.body.scrollHeight); });
 
+await page.evaluate( () => {
+                window.scrollBy(0, window.innerHeight);
+            });
+
     console.log("Pausing for 12 seconds");
     await page.waitForTimeout(12000);
     console.log("Closing the browser");
