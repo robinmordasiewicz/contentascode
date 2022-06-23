@@ -161,8 +161,8 @@ if ( !PASSWORD ) {
         const element = await waitForSelectors([["aria/Yes"],["#idSIButton9"]], targetPage, { timeout: 120000, visible: true });
         await scrollIntoViewIfNeeded(element, timeout);
         await cursor.click(element);
-        console.log("Pausing for 3 seconds");
-        await page.waitForTimeout(3000);
+        console.log("Pausing for 8 seconds");
+        await page.waitForTimeout(8000);
         const bottomPosition = await scrollPageToBottom(targetPage, {
           size: 500,
           delay: 250
@@ -172,7 +172,28 @@ if ( !PASSWORD ) {
           delay: 250
         });
     }
-    await page.evaluate(() => { window.scroll(0,0); });
+
+   // window.scrollBy(0, document.body.scrollHeight);
+
+const autoScroll = async (page) => {
+  await page.evaluate(async () => {
+    await new Promise((resolve, reject) => {
+      let totalHeight = 0
+      let distance = 100
+      let timer = setInterval(() => {
+        let scrollHeight = document.body.scrollHeight
+        window.scrollBy(0, distance)
+        totalHeight += distance
+        if(totalHeight >= scrollHeight){
+          clearInterval(timer)
+          resolve()
+        }
+      }, 100)
+    })
+  })
+}
+    await page.evaluate(() => { window.scrollBy(0,document.body.scrollHeight); });
+
     console.log("Pausing for 12 seconds");
     await page.waitForTimeout(12000);
     console.log("Closing the browser");
