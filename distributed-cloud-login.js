@@ -180,12 +180,13 @@ if ( !PASSWORD ) {
         const targetPage = page;
         const element = await waitForSelectors([['body > vs-stellar-root > vs-stellar-home-container > vs-stellar-home > div > div > vs-stellar-footer > div']], targetPage, { timeout: 120000, visible: true });
         await scrollIntoViewIfNeeded(element, timeout);
-//        await cursor.click(element);
-        console.log("Pausing for 8 seconds");
-        await page.waitForTimeout(8000);
+        console.log("Pausing for 1 seconds");
+        await page.waitForTimeout(1000);
+        const element = await waitForSelectors([['body > vs-stellar-root > vs-stellar-home-container > vs-stellar-home > vs-stellar-header-container > vs-stellar-header > vs-stellar-base-header > div > nav > div > div > div.home-description']], targetPage, { timeout: 120000, visible: true });
+        await scrollIntoViewIfNeeded(element, timeout);
 
-
-
+    }
+/*
 const scrollPage = async (page) => {
   await page.evaluate(() => {
     return new Promise((resolve, reject) => {
@@ -207,9 +208,6 @@ const scrollPage = async (page) => {
 };
 
 
-
-    }
-/*
    const selector = 'body > vs-stellar-root > vs-stellar-home-container > vs-stellar-home > div > div > vs-stellar-footer > div';
 
     // scroll selector into view
@@ -223,14 +221,8 @@ const scrollPage = async (page) => {
         }
     }, selector);
 
-   // window.scrollBy(0, document.body.scrollHeight);
-
-    await page.evaluate(() => { window.scrollBy(0,document.body.scrollHeight); });
-
-await page.evaluate( () => {
-                window.scrollBy(0, window.innerHeight);
-            });
 */
+
     console.log("Pausing for 12 seconds");
     await page.waitForTimeout(12000);
     console.log("Closing the browser");
