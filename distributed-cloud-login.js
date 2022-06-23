@@ -146,6 +146,8 @@ if ( !PASSWORD ) {
           }, PASSWORD);
         }
     }
+        console.log("Pausing for 1 seconds");
+        await page.waitForTimeout(1000);
     {
         console.log("Click Sign In - DUO Approval");
         const targetPage = page;
@@ -154,6 +156,8 @@ if ( !PASSWORD ) {
         await cursor.click(element);
         // await targetPage.waitForTimeout(5000);
     }
+        console.log("Pausing for 1 seconds");
+        await page.waitForTimeout(1000);
     {
         console.log("Click Yes to continue");
         console.log("Wait for DUO approval");
