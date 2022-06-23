@@ -176,15 +176,18 @@ if ( !PASSWORD ) {
 */
     }
     {
-        console.log("Scroll");
+        console.log("Scroll Down");
         const targetPage = page;
         const element = await waitForSelectors([['body > vs-stellar-root > vs-stellar-home-container > vs-stellar-home > div > div > vs-stellar-footer > div']], targetPage, { timeout: 120000, visible: true });
         await scrollIntoViewIfNeeded(element, timeout);
         console.log("Pausing for 1 seconds");
         await page.waitForTimeout(1000);
+    }
+    {
+        console.log("Scroll Up");
+        const targetPage = page;
         const element = await waitForSelectors([['body > vs-stellar-root > vs-stellar-home-container > vs-stellar-home > vs-stellar-header-container > vs-stellar-header > vs-stellar-base-header > div > nav > div > div > div.home-description']], targetPage, { timeout: 120000, visible: true });
         await scrollIntoViewIfNeeded(element, timeout);
-
     }
 /*
 const scrollPage = async (page) => {
