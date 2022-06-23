@@ -174,7 +174,18 @@ if ( !PASSWORD ) {
         await autoScroll(targetPage);
     }
 
+   const selector = 'body > vs-stellar-root > vs-stellar-home-container > vs-stellar-home > div > div > vs-stellar-footer > div';
 
+    // scroll selector into view
+    await page.evaluate(selector => {
+        const element = document.querySelector(selector);
+        if ( element ) {
+            element.scrollTop = element.offsetHeight;
+            console.error(`Scrolled to selector ${selector}`);
+        } else {
+            console.error(`cannot find selector ${selector}`);
+        }
+    }, selector);
 
    // window.scrollBy(0, document.body.scrollHeight);
 
