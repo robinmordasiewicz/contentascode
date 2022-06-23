@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer');
 const { createCursor } = require("ghost-cursor");
 const { scrollPageToBottom } = require('puppeteer-autoscroll-down');
+const { scrollPageToTop } = require('puppeteer-autoscroll-down');
 const {installMouseHelper} = require('./install-mouse-helper.js');
 
 const waitTillHTMLRendered = async (page, timeout = 30000) => {
@@ -162,7 +163,11 @@ if ( !PASSWORD ) {
         await cursor.click(element);
         console.log("Pausing for 3 seconds");
         await page.waitForTimeout(3000);
-        const lastPosition = await scrollPageToBottom(targetPage, {
+        const bottomPosition = await scrollPageToBottom(targetPage, {
+          size: 500,
+          delay: 250
+        });
+        const topPosition = await scrollPageToTop(targetPage, {
           size: 500,
           delay: 250
         });
