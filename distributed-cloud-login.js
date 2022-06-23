@@ -186,7 +186,7 @@ if ( !PASSWORD ) {
     {
         console.log("Scroll Up");
         const targetPage = page;
-        const element = await waitForSelectors([['body > vs-stellar-root > vs-stellar-home-container > vs-stellar-home > vs-stellar-header-container > vs-stellar-header > vs-stellar-base-header > div > nav > div > div > div.home-description']], targetPage, { timeout: 120000, visible: true });
+        const element = await waitForSelectors([['body > vs-stellar-root > vs-stellar-home-container > vs-stellar-home > div > div > div.page-header > h2']], targetPage, { timeout: 120000, visible: true });
         await scrollIntoViewIfNeeded(element, timeout);
     }
 /*
