@@ -164,8 +164,8 @@ if ( !PASSWORD ) {
         await cursor.click(element);
     }
 
-    console.log("Pausing for 10 seconds");
-    await page.waitForTimeout(10000);
+    console.log("Pausing for 12 seconds");
+    await page.waitForTimeout(12000);
     console.log("Closing the browser");
     await browser.close();
     console.log("exit puppeteer script");
