@@ -183,6 +183,8 @@ if ( !PASSWORD ) {
         console.log("Scroll Down");
         const targetPage = page;
         const element = await waitForSelectors([['body > vs-stellar-root > vs-stellar-home-container > vs-stellar-home > div > div > vs-stellar-footer > div']], targetPage, { timeout: 120000, visible: true });
+        console.log("Pausing for 1 seconds");
+        await page.waitForTimeout(1000);
         await scrollIntoViewIfNeeded(element, timeout);
         console.log("Pausing for 1 seconds");
         await page.waitForTimeout(1000);
