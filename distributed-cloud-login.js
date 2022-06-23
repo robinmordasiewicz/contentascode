@@ -169,10 +169,10 @@ if ( !PASSWORD ) {
           size: 500,
           delay: 250
         });
-        const lastPosition = await scrollPageToTop(targetPage, {
-          size: 500,
-          delay: 250
-        });
+//        const lastPosition = await scrollPageToTop(targetPage, {
+//          size: 500,
+//          delay: 250
+//        });
     }
 
     console.log("Pausing for 12 seconds");
