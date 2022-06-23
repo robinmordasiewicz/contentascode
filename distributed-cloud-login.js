@@ -70,8 +70,8 @@ if ( !PASSWORD ) {
     const timeout = 70000;
     console.log("set default timeout on page");
     page.setDefaultTimeout(timeout);
-    console.log("Pause for 10 seconds");
-    await page.waitForTimeout(10000);
+    console.log("Pause for 5 seconds");
+    await page.waitForTimeout(5000);
 
     const { autoScroll,waitForSelectors, scrollIntoViewIfNeeded, waitForConnected, waitForInViewport, waitForSelector, waitForElement, querySelectorsAll, querySelectorAll, waitForFunction } = require("./puppeteer-functions.mjs");
 
@@ -120,15 +120,19 @@ if ( !PASSWORD ) {
           }, USERNAME);
         }
     }
+        console.log("Pausing for 1 seconds");
+        await page.waitForTimeout(1000);
     {
         console.log("Click Next after entering email address");
         const targetPage = page;
+        await targetPage.waitForTimeout(500);
         const element = await waitForSelectors([["aria/Next"],["#idSIButton9"]], targetPage, { timeout, visible: true });
         await scrollIntoViewIfNeeded(element, timeout);
-        await targetPage.waitForTimeout(500);
         await cursor.click(element);
         await waitTillHTMLRendered(targetPage);
     }
+        console.log("Pausing for 1 seconds");
+        await page.waitForTimeout(1000);
     {
         console.log("Enter password into form");
         const targetPage = page;
