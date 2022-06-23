@@ -179,15 +179,15 @@ if ( !PASSWORD ) {
         console.log("Scroll");
         const targetPage = page;
         const element = await waitForSelectors([['body > vs-stellar-root > vs-stellar-home-container > vs-stellar-home > div > div > vs-stellar-footer > div']], targetPage, { timeout: 120000, visible: true });
-//        await scrollIntoViewIfNeeded(element, timeout);
+        await scrollIntoViewIfNeeded(element, timeout);
 //        await cursor.click(element);
         console.log("Pausing for 8 seconds");
         await page.waitForTimeout(8000);
 
 
 
-const scrollPage = async (targetPage) => {
-  await targetPage.evaluate(() => {
+const scrollPage = async (page) => {
+  await page.evaluate(() => {
     return new Promise((resolve, reject) => {
       let interval;
       const reachedBottom = () =>
