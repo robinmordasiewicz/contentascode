@@ -161,20 +161,12 @@ if ( !PASSWORD ) {
         await scrollIntoViewIfNeeded(element, timeout);
         await cursor.click(element);
     }
-    {
-        console.log("Scroll up and down slowly");
-        const targetPage = page;
-        const element = await waitForSelectors([body > vs-stellar-root > vs-stellar-home-container > vs-stellar-home > div > div > div.page-header > h2], targetPage, { timeout: 120000, visible: true });
-        const lastPosition = await scrollPageToBottom(targetPage, {
-          size: 500,
-          delay: 250
-        });
-//        const lastPosition = await scrollPageToTop(targetPage, {
-//          size: 500,
-//          delay: 250
-//        });
-    }
-
+    console.log("Pausing for 3 seconds");
+    await page.waitForTimeout(3000);
+    const lastPosition = await scrollPageToBottom(page, {
+      size: 500,
+      delay: 250
+    });
     console.log("Pausing for 12 seconds");
     await page.waitForTimeout(12000);
     console.log("Closing the browser");
