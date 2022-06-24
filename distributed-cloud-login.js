@@ -45,7 +45,7 @@ if ( !PASSWORD ) {
 (async () => {
     console.log("Start the Browser");
     const browser = await puppeteer.launch({
-       args: ["--disable-dev-shm-usage","--user-data-dir=./.chrome","--start-fullscreen","--kiosk","--disable-session-crashed-bubble","--noerrdialogs","--no-default-browser-check","--useAutomationExtension","--disable-infobars","--ignore-certificate-errors","--start-maximized","--enable-automation","--no-sandbox", "--disabled-setupid-sandbox", "--enable-font-antialiasing","--font-render-hinting=none","--disable-gpu","--force-color-profile=srgb","--window-size=1664,936","--hide-scrollbars"],
+       args: ["--disable-dev-shm-usage","--user-data-dir=./.chrome","--start-fullscreen","--kiosk","--disable-session-crashed-bubble","--noerrdialogs","--no-default-browser-check","--useAutomationExtension","--disable-infobars","--ignore-certificate-errors","--start-maximized","--enable-automation","--no-sandbox", "--disabled-setupid-sandbox", "--enable-font-antialiasing","--font-render-hinting=none","--disable-gpu","--force-color-profile=srgb","--window-size=1664,936","--hide-scrollbars","--high-dpi-support=1","--force-device-scale-factor=1"],
       //executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
       //executablePath: '/opt/google/chrome-unstable/google-chrome-unstable',
       slowMo: 0,
